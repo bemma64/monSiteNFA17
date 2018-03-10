@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;atelier1/Client.html.txt&apos; to &apos;Client.html&apos;" description="Rename resource &apos;Client.html.txt&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Client.html.txt" name="Client.html" stamp="1520676297280" updateReferences="true"/>
+</session>
