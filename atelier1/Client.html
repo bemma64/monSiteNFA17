@@ -1,0 +1,57 @@
+	<!DOCTYPE html>
+<html>
+<head>
+	<title>formulaire</title>
+	<meta charset="utf-8">
+	<script type="text/javascript">
+		
+		/*controle de l'email avant l'envoi au serveur*/
+		function verifieEmail(){
+			var email = document.getElementById('email').value;
+			var reg = new RegExp ("^[A-Za-z0-9]+[A-Za-z0-9\.\-_]*@[A-Za-z0-9\-_]+\.[A-Za-z0-9\.\-_]{1,}$","");
+			var bOK = (reg.test(email));
+			if (bOK==false) {
+				alert("L'adresse mail n'est pas valide !");
+			}
+			return bOK;			
+		};
+	</script>
+</head>
+<body>
+	<form action="<?php echo $_SERVER['PHP_SELF'];?>" method ="POST" onsubmit="return verifieEmail();" >
+		<fieldset>
+			<legend>Formulaire de contact</legend>
+
+			Nom <br>
+			<input type="text" id="nom" name="nom"><br>
+
+			Adresse email <br> 
+			<input type="text" id="email" name="email"><br>
+
+			Sujet<br>
+			<input type="text" id="sujet" name="sujet"><br>
+
+			Message <br> 
+			<textarea id="message" cols="30" rows="8" name="message"></textarea><br>
+			
+			<input type="submit" value="Envoyer" >
+	</fieldset>
+	</form>
+
+	<?php
+		if ($_SERVER["REQ§UEST_METHOD] == "POST"){
+			$nom = $_POST["nom"];
+			$email = $_POST["email"];
+			$sujet = $_POST["sujet"];
+			$message = $_POST["message"];
+
+        	echo "L'email a bien été envoyé.";
+
+		}
+		
+	?>
+
+	
+</body>
+</html>
+	
